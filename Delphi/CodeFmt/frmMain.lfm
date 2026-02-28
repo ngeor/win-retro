@@ -1,0 +1,125 @@
+object MainForm: TMainForm
+  Left = 236
+  Height = 217
+  Top = 133
+  Width = 327
+  Caption = 'Μορφοποίηση κώδικα'
+  ClientHeight = 197
+  ClientWidth = 327
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -9
+  Font.Name = 'Tahoma'
+  FormStyle = fsMDIForm
+  Menu = MainMenu1
+  OnCreate = FormCreate
+  LCLVersion = '2.2.0.4'
+  object ToolBar1: TToolBar
+    Left = 0
+    Height = 24
+    Top = 0
+    Width = 327
+    AutoSize = True
+    Images = ImageList1
+    TabOrder = 0
+    object btnFileOpen: TToolButton
+      Left = 1
+      Hint = 'Άνοιγμα'
+      Top = 2
+      ImageIndex = 0
+      OnClick = FileOpenClick
+    end
+    object btnFileSave: TToolButton
+      Left = 24
+      Hint = 'Αποθήκευση ως'
+      Top = 2
+      Caption = 'btnFileSave'
+      ImageIndex = 1
+      OnClick = FileSaveAsClick
+    end
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 174
+    Width = 327
+    Panels = <>
+  end
+  object IpHtmlPanel1: TIpHtmlPanel
+    Left = 0
+    Height = 150
+    Top = 24
+    Width = 327
+    Align = alClient
+    FixedTypeface = 'Courier New'
+    DefaultTypeFace = 'default'
+    DefaultFontSize = 12
+    FlagErrors = False
+    PrintSettings.MarginLeft = 0.5
+    PrintSettings.MarginTop = 0.5
+    PrintSettings.MarginRight = 0.5
+    PrintSettings.MarginBottom = 0.5
+    PrintSettings.Preview.Left = 800
+    PrintSettings.Preview.Top = 450
+    PrintSettings.Preview.Width = 2400
+    PrintSettings.Preview.Height = 1350
+    TabOrder = 2
+  end
+  object OpenDialog1: TOpenDialog
+    Filter = 'Κώδικας (όλες οι μορφές που υποστηρίζονται)|*.c;*.cpp;*.h;*.pas;*.dpr;.editorconfig|Κώδικας C/C++|*.c;*.cpp;*.h|Κώδικας Pascal|*.pas;*.dpr|EditorConfig|.editorconfig|Όλα τα αρχεία|*.*'
+    Options = [ofHideReadOnly, ofPathMustExist, ofFileMustExist]
+    Left = 104
+    Top = 8
+  end
+  object SaveDialog1: TSaveDialog
+    Filter = 'Μορφή εμπλουτισμένου κειμένου|*.rtf|Ιστοσελίδα|*.html'
+    OnTypeChange = SaveDialog1TypeChange
+    Options = [ofOverwritePrompt, ofHideReadOnly]
+    Left = 160
+    Top = 9
+  end
+  object MainMenu1: TMainMenu
+    Left = 216
+    Top = 9
+    object FileMenu: TMenuItem
+      Caption = '&Αρχείο'
+      object FileOpen: TMenuItem
+        Caption = 'Άν&οιγμα...'
+        OnClick = FileOpenClick
+      end
+      object FileSaveAs: TMenuItem
+        Caption = 'Αποθήκευση &ως...'
+        OnClick = FileSaveAsClick
+      end
+      object FileExit: TMenuItem
+        Caption = 'Έ&ξοδος'
+        OnClick = FileExitClick
+      end
+    end
+    object ToolsMenu: TMenuItem
+      Caption = '&Εργαλεία'
+      object ToolsPref: TMenuItem
+        Caption = '&Προτιμήσεις...'
+        OnClick = ToolsPrefClick
+      end
+    end
+    object HelpMenu: TMenuItem
+      Caption = '&Βοήθεια'
+      object HelpAbout: TMenuItem
+        Caption = '&Πληροφορίες ανάπτυξης...'
+        OnClick = HelpAboutClick
+      end
+    end
+  end
+  object ImageList1: TImageList
+    Left = 87
+    Top = 78
+    Bitmap = {
+      4C7A0200000010000000100000007C0000000000000078DADD936D0BC0200884
+      EFA7F7CF1D63902169766EFB9070442F4F9975C02F21831876D69717F261F2B3
+      6B05F2C4DD9A7949ECDDD9B00DF825BBE09DB57959B6B5B586FA15D87E7F92D5
+      F7E4586CD6EAD41052CAFBF545C2FFBB7CEDFCD91F3C81D7715F9E0733FE893C
+      9C3D9FCFBF7AFF2F7914FD43C705738FA0B8
+    }
+  end
+end
